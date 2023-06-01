@@ -1,0 +1,64 @@
+@font-face{
+    font-family: "fuente";
+    src: url(../Fonts/AmaticSC-Bold.ttf);
+}
+
+
+.input{
+    margin-top: 25px;
+}
+
+.animatedInput {
+    border: 2px solid transparent;
+    width: 500px;
+    border-radius: 5px;
+    padding: 8px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+    background-color:aliceblue;
+    font-family: "fuente";
+    font-size: 20px;
+    box-shadow: 0px 9px 13px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .animatedInput:focus {
+    animation: borderAnimation 2s infinite;
+  }
+  
+  @keyframes borderAnimation {
+    0% {
+      border-color: rgb(212, 0, 255);
+    }
+    25% {
+      border-color: rgb(9, 95, 255);
+    }
+    50% {
+      border-color: rgb(30, 131, 226);
+    }
+    75% {
+      border-color: rgb(24, 180, 201);
+    }
+    100% {
+      border-color: rgb(212, 0, 255);
+    }
+  }
+  
+  .button{
+    background-color:rgb(8, 134, 118);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 9px;
+    font-family: "fuente";
+    font-size: 23px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 9px 13px rgba(0, 0, 0, 0.2);
+  }
+
+  .button:hover {
+    background-color: rgb(102, 214, 199);
+    color: black;
+  }

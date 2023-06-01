@@ -1,0 +1,80 @@
+@font-face{
+    font-family: "rick-and-morty";
+    src: url(../Fonts/QuirkyRobot.ttf);
+}
+@font-face{
+    font-family: "fuente";
+    src: url(../Fonts/Play-Regular.ttf);
+}
+
+ .tarjeta{
+    width: 300px;
+    height: 500px;
+    margin-top: 20px;
+    background-color:#191c29;
+    color:rgb(88 199 250 / 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 7px 28px 26px 10px rgba(0,0,0,0.84);
+    border-radius: 10px;
+    overflow: hidden;
+    border: solid 7px rgb(248, 248, 241);  
+    
+}
+
+.tarjeta:hover
+{
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+}
+
+.tarjeta button{
+    padding: 4px 8px;
+    background-color: #fcfcfcd8;
+    font-weight:bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: absolute;
+    margin-bottom: 465px;
+    margin-left: 265px;
+} 
+
+
+ .img{
+    width: 265px;
+    height: 265px;
+    border-radius: 10px;
+} 
+
+.lista{
+    align-self: flex-start;
+    margin-left: 30px;
+    height: 250px;
+    font-family: "fuente";
+    font-size: 19px; 
+}
+
+.lista :first-child{
+margin-bottom: 20px;
+}
+
+
+.title{
+    align-self: flex-start;
+    margin: 0px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-family: "rick-and-morty";
+    font-size: 1.8rem;
+    color: rgb(88 199 250 / 100%);
+}
+
+
+.lista h3 {
+    margin: 2px;
+    margin-top: 5px;
+}
+
