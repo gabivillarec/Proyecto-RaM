@@ -2,12 +2,22 @@
 
 .App {
    padding: 0;
+   margin: 0;
    box-sizing: border-box;
    display: flex;
-   justify-content: flex-start;
+   justify-content: center;
    align-items: center;
    flex-direction: column;
-   background-color: rgb(113, 241, 199);
-   background-size: cover;
    min-height: 100vh;
+   background-image: url('./components/Img/form.jpg');
+   background-size:cover;
+   background-repeat: no-repeat; 
+}
+
+
+.App.home{
+   background-color: rgb(15, 212, 147);
+   justify-content: flex-start;
+   background-image: none;
+   overflow: hidden;
 }

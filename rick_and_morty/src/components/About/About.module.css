@@ -1,0 +1,30 @@
+@font-face{
+    font-family: "about";
+    src: url(../Fonts/spacerangersemital.ttf);
+}
+
+.container{
+    width: 100vw;
+    min-height: 100vh;
+    background-image:url(../Img/07e6rvy9.png) ;
+    background-size: cover;
+    display: flex;
+    font-family: "about";
+}
+
+.nota{
+    color:aliceblue;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.nota h1{
+    margin-bottom: 40px;
+    font-size: 50px;
+}
+
+.nota h4{
+    margin-bottom: -10px;
+    font-size: 27px;
+}
+

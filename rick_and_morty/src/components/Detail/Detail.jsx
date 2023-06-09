@@ -19,18 +19,20 @@ useEffect(() => {
     return setCharacter({});
  }, [id]);
 
-    return(
-        <div>
-           <div>
-           <h1>{character.name}</h1>
-           <h2>{character.species}</h2>
-           <h2>{character.status}</h2>
-           <h2>{character.gender}</h2>
-           {character.origin && <h2>{character.origin.name}</h2>}
+    return(      // El condicional que usamos en character "?" es por la asincronía , para esperar la respuesta del servidor y que no nos tire error (verifica antes que sea true) también el origin al ser un objeto
+        <div className={style.container}>
+
+           <div className={style.Detail}>  
+           <img src={character?.image} alt="" />
+           <div className={style.description}>
+           <h1>Name: {character?.name}</h1>  
+           <h2>Specie: {character?.species}</h2>
+           <h2>Status: {character?.status}</h2>
+           <h2>Gender: {character?.gender}</h2>
+           <h2>Origin: {character?.origin?.name}</h2>
            </div>
-           <div className={style.portal}>
-           <img src={character.image} alt="" />
            </div>
+
         </div>
     )
 

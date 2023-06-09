@@ -1,8 +1,27 @@
-.portal {
-   
-  }
 
+.container{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url(../Img/5toapypp.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "fuente";
+  color: rgb(88 199 250 / 100%);
+}
 
-.portal img{
+.Detail{
+  margin-top: 80px;
+  margin-right: 600px;
+}
 
+.Detail img{
+  box-shadow: -1px 4px 95px 22px rgba(0,0,0,0.72);
+}
+
+.description{
+  margin-top: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
