@@ -10,21 +10,28 @@ import Form from './components/Form/Form';
 import store from '../src/redux/store'
 import { Provider } from 'react-redux';
 import Favorites from './components/Favorites/Favorites';
+const URL = 'http://localhost:3001/rickandmorty/login/';
 
 
 function App() {
    
    const Location = useLocation();
    const navigate = useNavigate();
-   const EMAIL = 'admin@gmail.com';
-   const PASSWORD = 'admin123';
    let [characters , setCharacters] = useState([]);
    let [access , setAccess] = useState(false)
 
-   const login = (userData)=>{
-      if(EMAIL=== userData.email && PASSWORD === userData.password){
-         setAccess(true);
-         navigate('/home');
+   const login = async (userData)=>{
+
+      try {
+         const { email, password } = userData;
+         const {data} = await axios(URL + `?email=${email}&password=${password}`);
+
+            const { access } = data; 
+            setAccess(data);
+            access && navigate('/home');
+             
+      } catch (error) {
+         alert ('User wrong')
       }
    };
 
@@ -33,28 +40,28 @@ function App() {
    },[access]);
 
 
-   const onSearch = (id) => {
+   const onSearch = async (id) => {
+      if(characters.length < 5){   
+         try {
+            const {data}=await axios(`http://localhost:3001/rickandmorty/character/${id}`);
 
-      if(characters.length < 5){
-
-         axios(`http://localhost:3001/rickandmorty/character/${id}`)
-            .then(({ data }) => {
-            if (data.name) {
-               setCharacters((oldChars) => [...oldChars, data]);
-            } else {
-               alert('¡No hay personajes con este ID!');
-            }
-         });
+            if (data.name) setCharacters((oldChars) => [...oldChars, data]);
+            
+         } catch (error) {
+            alert ('Character not Found by ID, only character with id: 1 to id: 826');
+         }   
       }else{
-        alert ('No Puedes agregar mas de 5 cartas')
-      }  
+         alert ('No Puedes agregar mas de 5 cartas')
+       }  
    };
+           
 
-   const onClose = (id)=>{
-      let filterCharacter = characters.filter(pj => pj.id !== Number(id))
+     const onClose = (id)=>{
+         let filterCharacter = characters.filter(pj => pj.id !== id)
       
-      setCharacters(filterCharacter);
-   }
+         setCharacters(filterCharacter);
+     };
+
    
 
 
@@ -78,6 +85,5 @@ function App() {
 }
 
 export default App;
-
 
 

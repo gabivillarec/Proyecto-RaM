@@ -1,14 +1,6 @@
-const http = require("http");
-const {getCharById} = require("./controllers/getCharById");
+const server = require('./app');
+const PORT = 3001;
 
 
-http.createServer((request, response)=>{
 
-    response.setHeader('Access-Control-Allow-Origin', '*');
-
-    if(request.url.includes("/rickandmorty/character")){
-        const id = request.url.split("/").at(-1);
-        getCharById(response, +id) // con el + convertimos de string a number
-    }
-
-}).listen(3001)
+server.listen(PORT, ()=>{console.log('Server up in port: ' + PORT);});
