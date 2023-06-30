@@ -6,7 +6,8 @@ module.exports = (sequelize) => {
       id:{
          type: DataTypes.INTEGER,
          allowNull:false,
-         primaryKey:true
+         primaryKey:true,
+         autoIncrement: true
       },
       name:{
          type: DataTypes.STRING,
@@ -24,10 +25,12 @@ module.exports = (sequelize) => {
          type: DataTypes.ENUM('Female','Male','Genderless','unknown'),
          allowNull:false,
       },
+
       origin:{
-         type: DataTypes.JSON,
+         type: DataTypes.STRING,
          allowNull:false,
       },
+      
       image:{
          type: DataTypes.STRING,
          allowNull:false,

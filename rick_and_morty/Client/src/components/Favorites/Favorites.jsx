@@ -46,7 +46,7 @@ const Favorites = ({myFavorites}) =>{
                 status={el.status}
                 species={el.species}
                 gender={el.gender}
-                origin={el.origin.name}
+                origin={el.origin}
                 image={el.image}/>  
             })
          }
@@ -62,4 +62,4 @@ return {
 }
 }
 
-export default connect( mapStateToProps )(Favorites);
+export default connect( mapStateToProps, null )(Favorites);

@@ -19,7 +19,8 @@ export const addFav = (character)=>{
             });
             
         } catch (error) {
- 
+          console.log(error.message);
+          
         }
     };
 };

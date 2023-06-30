@@ -11,8 +11,13 @@ const Card = (props)=>{
    let[ isFav , setIsFav ] = useState(false)
    
    const handleFavorite = ()=>{
-      if(!isFav){setIsFav(true); props.addFav(props)};
-      if(isFav){setIsFav(false); props.removeFav(props.id)} 
+      if(isFav){
+         setIsFav(false); 
+         props.removeFav(props.id)
+      }else
+      {setIsFav(true); 
+         props.addFav(props)
+      };
    }
    
    useEffect(() => {
